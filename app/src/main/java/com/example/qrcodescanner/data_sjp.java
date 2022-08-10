@@ -53,19 +53,6 @@ public class data_sjp extends AppCompatActivity implements adapter_sjp.data_kiri
 
         sjp = new ArrayList<>();
 
-//        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String s) {
-//                adapter.getFilter().filter(s);
-//                return true;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String s) {
-//                adapter.getFilter().filter(s);
-//                return true;
-//            }
-//        });
 
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -120,6 +107,7 @@ public class data_sjp extends AppCompatActivity implements adapter_sjp.data_kiri
         Item kirim_id = adapter.getAmbildata(position);
         Intent intent = new Intent(data_sjp.this, ScannerActivity.class);
         intent.putExtra("kirim", kirim_id);
+        intent.putExtra("menu", "sjp");
         startActivity(intent);
     }
 

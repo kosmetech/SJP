@@ -27,19 +27,5 @@ public class rest_sjp {
             .setLenient()
             .create();
 
-    public Retrofit ambil_data_barcode(){
 
-            Retrofit retrofit =new Retrofit.Builder()
-                    .baseUrl(Constant.URL_barcode)
-                    .addConverterFactory(GsonConverterFactory.create(gson))
-                    //.addConverterFactory(ScalarsConverterFactory.create())
-                    .client(getRequestHeader())
-                    .build();
-
-
-            //data = retrofit.create(apidata.class);
-
-        return retrofit;
-        //return data;
-    }
 }

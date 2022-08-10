@@ -3,8 +3,8 @@
     package="com.example.qrcodescanner">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,27 @@
         android:label="Warehouse Delivery Order "
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.QRCODESCANNER">
+        android:theme="@style/Theme.QRCODESCANNER"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".VerifikasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanFGActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScannerFGActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DataMutasiActivity"
+            android:exported="false" />
+        <activity android:name=".MenuActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -22,14 +42,8 @@
         <activity
             android:name=".hasil_scan"
             android:exported="false" />
-        <activity android:name=".data_sjp">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ScannerActivity"/>
+        <activity android:name=".data_sjp" />
+        <activity android:name=".ScannerActivity" />
     </application>
 
 </manifest>

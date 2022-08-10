@@ -1,39 +1,36 @@
 package com.example.qrcodescanner;
 
 import com.example.qrcodescanner.get_set.Item_sjp;
+import com.example.qrcodescanner.get_set.ListMutasi;
+import com.example.qrcodescanner.get_set.ResponseFG;
 
 import org.json.JSONArray;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
-import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface APIService {
-
-//    @Headers({"Content-Type: application/json; charset=UTF-8"})
-//    @POST("add_sjp")
-//    @FormUrlEncoded
-//    Call<ResponseSukses> savePost(@Field("id_sjp") String id_sjp,
-//                             @Field("barcode") ArrayList<String> barcode);
-
-//    @Headers({"Content-Type: application/json; charset=UTF-8"})
-//    @POST("add_sjp")
-//    @FormUrlEncoded
-//    Call<ArrayList<String>> savePost(@Field("id_sjp") String id_sjp,
-//                                  @Field("barcode") ArrayList<String> barcode);
 
     @GET("add_sjp/{id_sjp}/{barcode}")
     Call<Response> savePost(@Path("id_sjp") String id_sjp,
                                      @Path(value = "barcode", encoded = true) String barcode);
 
+    @GET("sertem/list-gudang")
+    Call<ArrayList<ResponseGudang>> getListMutasi();
+
+    @GET("sertem/add/{id}/{barcode}")
+    Call<ResponseFG> saveFG(@Path("id") String id,
+                            @Path(value = "barcode", encoded = true) String barcode);
+
+    @GET("sjp")
+    Call<ArrayList<ResponseKonfirmasi>> getData(@Query("barcode") String barcode);
+
+    @GET("sertem/verifikasi/{id_dokumen}/{barcode}")
+    Call<ResponseVer> verifikasi(@Path("id_dokumen") String id,
+                              @Path(value = "barcode", encoded = true) String barcode);
 
 }

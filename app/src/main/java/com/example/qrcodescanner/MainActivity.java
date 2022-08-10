@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             hasil_qr = result.getText();
+                            Toast.makeText(MainActivity.this, hasil_qr, Toast.LENGTH_SHORT).show();
                             data_scan_ArrayList.add(new data_scan(hasil_qr));
                             for (int i = 0; i < data_scan_ArrayList.size(); i++) {
                                 for (int j = i + 1 ; j < data_scan_ArrayList.size(); j++) {

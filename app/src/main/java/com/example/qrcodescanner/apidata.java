@@ -1,7 +1,5 @@
 package com.example.qrcodescanner;
 
-//import android.telecom.Call;
-
 import com.example.qrcodescanner.get_set.Item;
 
 import java.util.List;
@@ -14,13 +12,10 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
-/**
- * Created by dafidzeko on 5/11/2016.
- */
 public interface apidata {
 
 
-    @GET("list_sjp")
+    @GET("sjp/list-ckg")
     Call<List<Item>> getsjp();
 
     @GET("sjp")
