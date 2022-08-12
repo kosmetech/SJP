@@ -116,6 +116,8 @@ public class VerifikasiActivity extends AppCompatActivity {
 
     }
 
+    //function get data
+
     private void getData(String barcode, String id){
         apiService.getData(barcode).enqueue(new Callback<ArrayList<ResponseKonfirmasi>>() {
             @Override
